@@ -1,0 +1,25 @@
+$duration-normal: 330ms;
+
+$tablet-width: 1200px;
+$mobile-width: 767px;
+
+$colors: (
+  "primary": #1729ec,
+  "primary-hover": #1928ca,
+  "neutral": #535762,
+  "neutral-hover": #3f424b,
+  "bg-primary": #f0f0f0,
+  "bg-disabled": #dfdfdf,
+  "border-primary": #ccc,
+  "text-blue": #217feb,
+  "text-skyblue": #84bdff,
+  "text-red": red,
+  "text-disabled": #a9afbe,
+);
+
+@function getColor($color, $opacity: 1) {
+  @if map-has-key($colors, $color) {
+    @return transparentize(map-get($colors, $color), 1 - $opacity);
+  }
+  @return #000;
+}
